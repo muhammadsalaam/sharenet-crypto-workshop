@@ -1,0 +1,84 @@
+<template>
+  <Dialog
+    v-model:visible="display"
+    @hide="toggleModal"
+    :modal="true"
+    :closeOnEscape="false"
+  >
+    <template #header>
+      <h2 class="heading">{{ "Booking Seats for " + city + " Workshop" }}</h2>
+    </template>
+    <h3 class="subheading">Date: {{ date }}</h3>
+    <h4 class="venue">Venue: {{ venue }}</h4>
+    <section id="seats">
+      <input
+        id="seat-1"
+        class="seat-select"
+        type="checkbox"
+        value="1"
+        name="seat[]"
+        v-for="seats in cptAvail" :key="seats" 
+      />
+      <label for="seat-1" class="seat"></label>
+    </section>
+    <template #footer>
+      <div class="flex justify-content-end">
+        <Button label="Confirm" @click="confirmCart" class="p-button-primary" />
+      </div>
+    </template>
+  </Dialog>
+</template>
+
+<script>
+import Dialog from "primevue/dialog";
+import Button from "primevue/button";
+import { mapState, mapMutations } from "vuex";
+export default {
+  name: "SeatsModal",
+  data() {
+    return {
+      display: true,
+    };
+  },
+  computed: {
+    ...mapState({
+      date: (state) => state.booking.date,
+      venue: (state) => state.booking.venue,
+      city: (state) => state.booking.city,
+      cptAvail1: (state) => state.booking.cptAvail1
+
+
+    }),
+  },
+  components: {
+    Dialog,
+    Button,
+  },
+  methods: {
+    ...mapMutations(["toggleModal"]),
+    confirmCart() {
+      this.toggleModal();
+    },
+  },
+};
+</script>
+
+<style scoped>
+
+.seat {
+    float: left;
+    display: block;
+    margin: 5px;
+    background: #4CAF50;
+    width: 100px;
+    height: 140px;
+}
+
+.seat-select {
+    display: none;
+}
+
+.seat-select:checked+.seat {
+    background: #F44336;
+}
+</style>

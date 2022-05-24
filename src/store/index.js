@@ -1,8 +1,8 @@
 import { createStore } from "vuex";
+import { booking } from "./modules/booking";
 
 export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    booking,
+  },
 });
