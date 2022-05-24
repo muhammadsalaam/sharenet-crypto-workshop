@@ -17,9 +17,32 @@
         type="checkbox"
         value="1"
         name="seat[]"
-        v-for="seats in cptAvail" :key="seats" 
       />
       <label for="seat-1" class="seat"></label>
+      <input
+        id="seat-2"
+        class="seat-select"
+        type="checkbox"
+        value="2"
+        name="seat[]"
+      />
+      <label for="seat-2" class="seat"></label>
+      <input
+        id="seat-3"
+        class="seat-select"
+        type="checkbox"
+        value="3"
+        name="seat[]"
+      />
+      <label for="seat-3" class="seat"></label>
+      <input
+        id="seat-4"
+        class="seat-select"
+        type="checkbox"
+        value="4"
+        name="seat[]"
+      />
+      <label for="seat-4" class="seat"></label>
     </section>
     <template #footer>
       <div class="flex justify-content-end">
@@ -45,8 +68,6 @@ export default {
       date: (state) => state.booking.date,
       venue: (state) => state.booking.venue,
       city: (state) => state.booking.city,
-      cptAvail1: (state) => state.booking.cptAvail1
-
 
     }),
   },
