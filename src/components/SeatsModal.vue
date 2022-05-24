@@ -68,7 +68,6 @@ export default {
       date: (state) => state.booking.date,
       venue: (state) => state.booking.venue,
       city: (state) => state.booking.city,
-
     }),
   },
   components: {
@@ -85,21 +84,20 @@ export default {
 </script>
 
 <style scoped>
-
 .seat {
-    float: left;
-    display: block;
-    margin: 5px;
-    background: #4CAF50;
-    width: 100px;
-    height: 140px;
+  float: left;
+  display: block;
+  margin: 5px;
+  background: #4caf50;
+  width: 100px;
+  height: 140px;
 }
 
 .seat-select {
-    display: none;
+  display: none;
 }
 
-.seat-select:checked+.seat {
-    background: #F44336;
+.seat-select:checked + .seat {
+  background: #f44336;
 }
 </style>

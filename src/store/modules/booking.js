@@ -9,46 +9,39 @@ export const booking = {
     city: null,
     dates: ["01/06/2022", "02/06/2022", "03/06/2022"],
     cptAvail: [
-      {date: "01/06/2022",
-       seats: "1100100111"
-      },
+      { date: "01/06/2022", seats: "1100100111" },
       {
         date: "02/06/2022",
-        seats: "0100100110"
+        seats: "0100100110",
       },
       {
         date: "03/06/2022",
-        seats: "1100101010"
+        seats: "1100101010",
       },
     ],
     jhbAvail: [
-        {date: "01/06/2022",
-        seats: "1100100111"
-       },
-       {
-         date: "02/06/2022",
-         seats: "0100100110"
-       },
-       {
-         date: "03/06/2022",
-         seats: "1100101010"
-       },
+      { date: "01/06/2022", seats: "1100100111" },
+      {
+        date: "02/06/2022",
+        seats: "0100100110",
+      },
+      {
+        date: "03/06/2022",
+        seats: "1100101010",
+      },
     ],
-   
+
     kznAvail: [
-        {date: "01/06/2022",
-        seats: "1100100111"
-       },
-       {
-         date: "02/06/2022",
-         seats: "0100100110"
-       },
-       {
-         date: "03/06/2022",
-         seats: "1100101010"
-       },
+      { date: "01/06/2022", seats: "1100100111" },
+      {
+        date: "02/06/2022",
+        seats: "0100100110",
+      },
+      {
+        date: "03/06/2022",
+        seats: "1100101010",
+      },
     ],
-  
   },
   mutations: {
     toggleCityCPT(state) {
@@ -86,8 +79,8 @@ export const booking = {
       state.date = null;
     },
     setSeats(state, payload) {
-        state.availability = payload;
-    }
+      state.availability = payload;
+    },
   },
   actions: {},
 };
