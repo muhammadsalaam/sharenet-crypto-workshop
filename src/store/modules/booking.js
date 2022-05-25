@@ -11,8 +11,8 @@ export const booking = {
       {
         city: "Cape Town",
         date: "01/06/2022",
-        seats: [1, 1, 0, 0, 1, 0, 0, 1, 1, 1],
-        remaining: 4,
+        seats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        remaining: 0,
       },
       {
         city: "Cape Town",
@@ -37,8 +37,8 @@ export const booking = {
       {
         city: "Johannesburg",
         date: "02/06/2022",
-        seats: [0, 1, 0, 0, 1, 0, 0, 1, 1, 0],
-        remaining: 5,
+        seats: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        remaining: 0,
       },
       {
         city: "Johannesburg",
@@ -109,4 +109,5 @@ export const booking = {
     },
   },
   actions: {},
+  getters: {},
 };

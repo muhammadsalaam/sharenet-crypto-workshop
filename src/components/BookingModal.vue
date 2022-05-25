@@ -8,8 +8,11 @@
             <span class="dates ms-4 pt-3"
               ><strong>{{ cape.date }}</strong></span
             ><br />
-            <span class="status ms-4 pt-3"
+            <span v-if="cape.remaining > 0" class="status ms-4 pt-3"
               ><strong>{{ cape.remaining + " seats left" }}</strong></span
+            >
+            <span v-else class="status ms-4 pt-3"
+              ><strong>Sold Out</strong></span
             >
             <Button
               @click="toggleDate(cape.date)"
@@ -17,6 +20,7 @@
               label="Book Now"
               class="p-button-rounded ms-4 mt-2"
               style="width: 12rem"
+              :disabled="cape.remaining === 0"
             />
           </div>
         </div>
@@ -38,8 +42,11 @@
             <span class="dates ms-4 pt-3"
               ><strong>{{ joburg.date }}</strong></span
             ><br />
-            <span class="status ms-4 pt-3"
+            <span v-if="joburg.remaining > 0" class="status ms-4 pt-3"
               ><strong>{{ joburg.remaining + " seats left" }}</strong></span
+            >
+            <span v-else class="status ms-4 pt-3"
+              ><strong>Sold Out</strong></span
             >
             <Button
               @click="toggleDate(joburg.date)"
@@ -47,6 +54,7 @@
               label="Book Now"
               class="p-button-rounded ms-4 mt-2"
               style="width: 12rem"
+              :disabled="joburg.remaining === 0"
             />
           </div>
         </div>
@@ -68,8 +76,11 @@
             <span class="dates ms-4 pt-3"
               ><strong>{{ durbs.date }}</strong></span
             ><br />
-            <span class="status ms-4 pt-3"
+            <span v-if="durbs.remaining > 0" class="status ms-4 pt-3"
               ><strong>{{ durbs.remaining + " seats left" }}</strong></span
+            >
+            <span v-else class="status ms-4 pt-3"
+              ><strong>Sold Out</strong></span
             >
             <Button
               @click="toggleDate(durbs.date)"
@@ -77,6 +88,7 @@
               label="Book Now"
               class="p-button-rounded ms-4 mt-2"
               style="width: 12rem"
+              :disabled="durbs.remaining === 0"
             />
           </div>
         </div>
@@ -124,23 +136,8 @@ export default {
   },
   methods: {
     ...mapMutations(["toggleModal", "toggleCardsActive", "toggleDate"]),
-    setRemainder() {
-      this.remainCPT[0] = this.cptAvail[0].remaining;
-      this.remainCPT[1] = this.cptAvail[1].remaining;
-      this.remainCPT[2] = this.cptAvail[2].remaining;
-
-      this.remainJHB[0] = this.jhbAvail[0].remaining;
-      this.remainJHB[1] = this.jhbAvail[1].remaining;
-      this.remainJHB[2] = this.jhbAvail[2].remaining;
-
-      this.remainDBN[0] = this.dbnAvail[0].remaining;
-      this.remainDBN[1] = this.dbnAvail[1].remaining;
-      this.remainDBN[2] = this.dbnAvail[2].remaining;
-    },
   },
-  beforeMount() {
-    this.setRemainder();
-  },
+  beforeMount() {},
 };
 </script>
 
@@ -152,5 +149,8 @@ export default {
   background-color: aliceblue;
   margin-bottom: 10%;
   border-radius: 5%;
+}
+
+@media screen and (max-width: 430px) {
 }
 </style>
